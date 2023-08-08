@@ -1,9 +1,12 @@
+import { Box } from '@mui/material'
 import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className='text-3xl text-white pt-24'>
-      namaste next
-    </main>
+    <Box component='main'>
+      <main className='text-3xl text-white'>
+        namaste next
+      </main>
+    </Box>
   )
 }

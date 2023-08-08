@@ -14,10 +14,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Link from 'next/link';
+import Image from 'next/image'
+
 
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [{ name: 'home', url: '/' }, { name: 'works', url: '/work' }, { name: 'about-me', url: '/about' }, { name: 'contact', url: '/contact' }];
 
 export default function Header(props) {
   const { window } = props;
@@ -30,14 +33,23 @@ export default function Header(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        MUI c
       </Typography>
+      <div>
+        <Image
+          src="/logo.png"
+          width={50}
+          height={50}
+          alt="logo"
+        />
+      </div>
+      hii
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item?.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -48,53 +60,65 @@ export default function Header(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <header>
-      <Box sx={{ display: 'flex' }}>
-        <AppBar color="secondary" sx={{color: "#282c33"}} component="nav">
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: 'none' } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            >
-              MUI
-            </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-              {navItems.map((item) => (
-                <Button key={item} sx={{ color: '#fff' }}>
-                  {item}
-                </Button>
-              ))}
-            </Box>
-          </Toolbar>
-        </AppBar>
-        <Box component="nav">
-          <Drawer
-            container={container}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-            sx={{
-              display: { xs: 'block', sm: 'none' },
-              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-            }}
+    <Box sx={{ display: 'flex' }}>
+      <AppBar elevation={0} sx={{ backgroundColor: "#282c33" }} component="nav" >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            {drawer}
-          </Drawer>
-        </Box>
+            <MenuIcon />
+          </IconButton>
+          {/* <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            MUI
+          </Typography> */}
+          <Box
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex', marginLeft: "10rem" } }}
+
+          >
+
+            <Image
+              src="/logo.png"
+              width={16}
+              height={16}
+              alt="logo"
+            />
+            <h1 className='ml-6 font-bold'>Harshit Ahuja</h1>
+          </Box>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            {navItems.map((item) => (
+              <Link href={item?.url} key={item?.name} className='mr-5' >
+                <span className='text-[#C778DD]'>#</span><span className=' hover:text-[#ABB2BF]'>{item?.name}</span>
+              </Link>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <Box component="nav">
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
       </Box>
-    </header>
+      <Toolbar />
+    </Box>
   );
 }

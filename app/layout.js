@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import SocialProfiles from "./components/SocialProfiles";
 import "./globals.css";
 import { Fira_Code } from "next/font/google";
 
@@ -15,7 +16,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <Header />
+        <div className="relative z-0" >
+          <Header />
+        </div>
+        <div className="fixed top-0 left-0 z-50 ml-5 flex flex-col justify-center items-center gap-2">
+          <div className=' h-48 w-[1px] rounded-sm bg-white'>
+          </div>
+          <SocialProfiles />
+        </div>
         {children}
         <Footer />
       </body>
