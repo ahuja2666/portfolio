@@ -16,10 +16,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className="relative z-0" >
+        <div className="relative z-40" >
           <Header />
         </div>
-        <div className="fixed top-0 left-0 z-50 ml-5 flex flex-col justify-center items-center gap-2">
+        <div className="fixed top-0 z-50 left-0 ml-5 flex flex-col justify-center items-center gap-2 max-sm:hidden">
           <div className=' h-48 w-[1px] rounded-sm bg-white'>
           </div>
           <SocialProfiles />

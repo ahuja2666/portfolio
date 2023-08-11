@@ -62,7 +62,7 @@ export default function Header(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar elevation={0} sx={{ backgroundColor: "#282c33" }} component="nav" >
-        <Toolbar>
+        <Toolbar className='ml-32 mr-20 max-sm:ml-2'>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -80,7 +80,7 @@ export default function Header(props) {
             MUI
           </Typography> */}
           <Box
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex', marginLeft: "10rem" } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}
 
           >
 
@@ -90,12 +90,12 @@ export default function Header(props) {
               height={16}
               alt="logo"
             />
-            <h1 className='ml-6 font-bold'>Harshit Ahuja</h1>
+            <h1 className='ml-3 font-bold'>Harshit Ahuja</h1>
           </Box>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             {navItems.map((item) => (
               <Link href={item?.url} key={item?.name} className='mr-5' >
-                <span className='text-[#C778DD]'>#</span><span className=' hover:text-[#ABB2BF]'>{item?.name}</span>
+                <span className='text-[#C778DD]'>#</span><span className='hover:text-[#ABB2BF]'>{item?.name}</span>
               </Link>
             ))}
           </Box>

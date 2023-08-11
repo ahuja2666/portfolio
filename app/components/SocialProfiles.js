@@ -12,10 +12,10 @@ export default function SocialProfiles() {
             <div key={item}>
               <Image
                 src={item}
-                width={35}
-                height={35}
+                width={30}
+                height={30}
                 alt={item.split("/")[1].split(".")[0]}
-                className="cursor-pointer"
+                className="cursor-pointer hover:"
               />
             </div>
           )
