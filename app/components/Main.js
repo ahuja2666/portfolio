@@ -47,7 +47,7 @@ export default function Main() {
 
         </Grid>
       </Grid>
-      <div className="p-0 m-0 box-border w-[85%] mx-auto max-md:w-full">
+      <div className="p-0 m-0 box-border w-[85%] mx-auto max-md:hidden">
         <fieldset className="border border-[#ABB2BF] pl-[2%] border-b-0">
           <p className=" text-2xl text-center p-3 pt-1 font-normal">Turning coffee into code, one cup at a time!</p>
           <legend>
