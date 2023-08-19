@@ -62,16 +62,7 @@ export default function Header(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar elevation={0} sx={{ backgroundColor: "#282c33" }} component="nav" >
-        <Toolbar className='ml-32 mr-20 max-sm:ml-2'>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
+        <Toolbar className='ml-32 mr-20 max-sm:ml-2 max-sm:mr-0 max-sm:pr-0'>
           {/* <Typography
             variant="h6"
             component="div"
@@ -80,17 +71,38 @@ export default function Header(props) {
             MUI
           </Typography> */}
           <Box
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}
+            sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
 
           >
-
-            <Image
-              src="/logo.png"
-              width={16}
-              height={16}
-              alt="logo"
-            />
-            <h1 className='ml-3 font-bold'>Harshit Ahuja</h1>
+            <div className='flex gap-2 items-center'>
+              <div>
+                <Image
+                  src="/logo.png"
+                  width={16}
+                  height={16}
+                  alt="logo"
+                />
+              </div>
+              <div>
+                <h1 className='ml-3 font-bold'>Harshit Ahuja</h1>
+              </div>
+            </div>
+            <div className=' md:hidden'>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="end"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2 }}
+              >
+                <Image
+                  src="/hamburger.png"
+                  width={24}
+                  height={24}
+                  alt="hamburger"
+                />
+              </IconButton>
+            </div>
           </Box>
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             {navItems.map((item) => (
@@ -99,6 +111,7 @@ export default function Header(props) {
               </Link>
             ))}
           </Box>
+
         </Toolbar>
       </AppBar>
       <Box component="nav">
@@ -111,7 +124,7 @@ export default function Header(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', md: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
