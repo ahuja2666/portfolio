@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="text-white font-normal text-base">
               Full Stack Web App Developer
             </div>
-            <div className="text-white font-normal text-base">
+            <div className="text-white font-normal text-xs">
               <Link target="_blank" href={"https://www.figma.com/community/file/1164933568884615740/Portfolio"}>Design Credit ~ Elias from Figma community</Link>
             </div>
           </div>
