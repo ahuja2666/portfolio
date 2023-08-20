@@ -63,28 +63,21 @@ export default function Header(props) {
     <Box sx={{ display: 'flex' }}>
       <AppBar elevation={0} sx={{ backgroundColor: "#282c33" }} component="nav" >
         <Toolbar className='ml-32 mr-20 max-sm:ml-2 max-sm:mr-0 max-sm:pr-0'>
-          {/* <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography> */}
           <Box
             sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
 
           >
             <div className='flex gap-2 items-center'>
               <div>
-                <Image
+                <Link href={"/"}><Image
                   src="/logo.png"
                   width={16}
                   height={16}
                   alt="logo"
-                />
+                /></Link>
               </div>
               <div>
-                <h1 className='ml-3 font-bold'>Harshit Ahuja</h1>
+                <Link href={"/"}><h1 className='ml-3 font-bold'>Harshit Ahuja</h1></Link>
               </div>
             </div>
             <div className=' md:hidden'>
