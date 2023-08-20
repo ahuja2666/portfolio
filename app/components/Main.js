@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 // import "./main.css"
 
 export default function Main() {
@@ -18,7 +19,7 @@ export default function Main() {
                 From Frontend Flourishes to Backend Brilliance: Powering Digital Dreams with Full Stack Wizardry</p>
             </div>
             <div>
-              <button className='border-[#C778DD] border font-medium text-base py-2 px-4 hover:text-[#ABB2BF]'>Contact Me!!</button>
+              <Link href={"/contact"}><button className='border-[#C778DD] border font-medium text-base py-2 px-4 hover:text-[#ABB2BF]'>Contact Me!!</button></Link>
             </div>
           </div>
         </Grid>

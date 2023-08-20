@@ -2,22 +2,19 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Link from 'next/link';
 import Image from 'next/image'
 
-
+const contacts = [{ img: "/Discord.png", alt: "disord icon", href: "https://discordapp.com/users/938844640004673536", text: "!harshit#7305" },
+{ img: "/Email.png", alt: "email icon", href: "mailto: ahujaharshit26@gamil.com", text: "ahujaharshit26@gamil.com" },
+{ img: "/Linkedin.png", alt: "linkedin icon", href: "https://www.linkedin.com/in/ahujaharshit26/", text: "@ahujaharshit26" }
+]
 
 const drawerWidth = 240;
 const navItems = [{ name: 'home', url: '/' }, { name: 'works', url: '/work' }, { name: 'about-me', url: '/about' }, { name: 'contact', url: '/contact' }];
@@ -31,29 +28,69 @@ export default function Header(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI c
-      </Typography>
-      <div>
-        <Image
-          src="/logo.png"
-          width={50}
-          height={50}
-          alt="logo"
-        />
+    <Box sx={{ textAlign: 'center', backgroundColor: "#282C33", height: "100%", width: "100%" }}>
+      <div className='flex flex-col justify-between h-[100%] py-4'>
+        <div>
+          <div className='flex justify-between mx-4 my-2'>
+            <div className='flex gap-2 items-center'>
+              <div>
+                <Link href={"/"}><Image
+                  src="/logo.png"
+                  width={16}
+                  height={16}
+                  alt="logo"
+                /></Link>
+              </div>
+              <div>
+                <Link href={"/"}><h1 className='ml-3 font-bold text-white'>Harshit Ahuja</h1></Link>
+              </div>
+            </div>
+            <div onClick={handleDrawerToggle}>
+              <Image
+                src={"/cross.png"}
+                height={24}
+                width={24}
+                alt='cross icon'
+              />
+            </div>
+          </div>
+          <List>
+            {navItems.map((item) => (
+              <ListItem onClick={handleDrawerToggle} key={item?.name + "xs"} >
+                <ListItemButton>
+                  <Link href={item?.url}>
+                    <div className='font-medium text-4xl'>
+                      <div>
+                        <span className='text-[#C778DD]'>#</span>
+                        <span className='text-white'>{item?.name}</span>
+                      </div>
+                    </div>
+                  </Link>
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </div>
+        <div>
+          <div className="flex gap-3 items-end justify-center">
+            {
+              contacts?.map((item, idx) => {
+                return (
+                  <div key={idx + item?.href} >
+                    <Link target="_blank" href={item?.href}><Image
+                      src={item?.img}
+                      height={32}
+                      width={32}
+                      alt={item?.alt}
+                    />
+                    </Link>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
       </div>
-      hii
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item?.name} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
     </Box>
   );
 
@@ -118,7 +155,7 @@ export default function Header(props) {
           }}
           sx={{
             display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: "100%", backgroundColor: "#282C33" },
           }}
         >
           {drawer}
