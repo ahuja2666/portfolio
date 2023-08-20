@@ -1,7 +1,15 @@
+import AboutMe from "../components/AboutMe";
+import Skills from "../components/Skills";
+import SoftSkills from "../components/SoftSkills";
+
 
 
 export default function About() {
   return (
-    <div>About page</div>
+    <>
+      <AboutMe aboutPage={true} />
+      <Skills aboutPage={true} />
+      <SoftSkills />
+    </>
   )
 }

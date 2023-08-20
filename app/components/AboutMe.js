@@ -1,17 +1,20 @@
 import { Grid } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function AboutMe() {
+export default function AboutMe(props) {
+  const { aboutPage } = props
   return (
     <div className="ml-36 mr-32 mt-16 max-sm:ml-5 max-sm:mr-5">
       <div className="flex flex-col gap-10">
         <div className="flex justify-between items-center">
           <div className="flex gap-3 items-center">
             <div className="text-3xl font-medium">
-              <span className="text-[#C778DD]">#</span>
+              <span className="text-[#C778DD]">{(aboutPage) ? "/" : "#"}</span>
               <span className="text-white">about-me</span>
+              {(aboutPage) && <div className="text-white  font-normal text-base my-4">Who am i?</div>}
             </div>
-            <div className=" w-80 h-[1px] bg-[#C778DD] max-md:hidden"></div>
+            {(!aboutPage) && <div className=" w-80 h-[1px] bg-[#C778DD] max-md:hidden"></div>}
           </div>
         </div>
         <div>
@@ -38,11 +41,11 @@ export default function AboutMe() {
                   frameworks such as ReactJs, NextJs, Node, Express empowers me to bring ideas to life while ensuring
                   functionality, security, and scalability.
                 </p>
-                <div>
+                {(!aboutPage) && <div>
                   <button className="text-white py-2 px-4 border border-[#C778DD] hover:text-[#ABB2BF]">
-                    Read more -&gt;
+                    <Link href={"/about"}>Read more -&gt;</Link>
                   </button>
-                </div>
+                </div>}
               </div>
             </Grid>
             <Grid item xs={12} md={6} lg={6}>
