@@ -6,17 +6,18 @@ const contacts = [{ img: "/Discord.png", alt: "disord icon", href: "https://disc
 { img: "/Linkedin.png", alt: "linkedin icon", href: "https://www.linkedin.com/in/ahujaharshit26/", text: "@ahujaharshit26" }
 ]
 
-export default function Contact() {
+export default function Contact(props) {
+  const { contactPage } = props
   return (
     <div className="ml-36 mr-32 mt-16 max-sm:ml-5 max-sm:mr-5">
       <div className="flex flex-col gap-10">
         <div className="flex justify-between items-center">
           <div className="flex gap-3 items-center">
             <div className="text-3xl font-medium">
-              <span className="text-[#C778DD]">#</span>
+              <span className="text-[#C778DD]">{(contactPage) ? "/" : "#"}</span>
               <span className="text-white">contact</span>
             </div>
-            <div className=" w-40 h-[1px] bg-[#C778DD] max-md:hidden"></div>
+            {(!contactPage) && <div className=" w-40 h-[1px] bg-[#C778DD] max-md:hidden"></div>}
           </div>
         </div>
         <div>
