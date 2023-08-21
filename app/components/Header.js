@@ -99,7 +99,7 @@ export default function Header(props) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar elevation={0} sx={{ backgroundColor: "#282c33" }} component="nav" >
-        <Toolbar className='ml-32 mr-20 max-sm:ml-2 max-sm:mr-0 max-sm:pr-0'>
+        <Toolbar className='!ml-32 !mr-20 max-sm:!ml-2 max-sm:!mr-0 max-sm:!pr-0'>
           <Box
             sx={{ flexGrow: 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
 

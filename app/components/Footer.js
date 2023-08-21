@@ -11,10 +11,10 @@ export default function Footer() {
       <div className="ml-36 mr-32 mt-8 max-sm:ml-5 max-sm:mr-5">
         <div className="flex justify-between flex-wrap max-md:gap-2">
           <div className="flex flex-col gap-4">
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               <Image height={16} width={16} alt="small logo" src={"/logo.png"} />
               <span className=" text-base text-white font-medium">Harshit</span>
-              <Link target="_blank" href={"mailto: ahujaharshit26@gamil.com"}><span className="text-[#ABB2BF] text-base font-normal ml-4">ahujaharshit26@gmail.com</span></Link>
+              <Link target="_blank" href={"mailto: ahujaharshit26@gamil.com"}><span className="text-[#ABB2BF] text-base font-normal">ahujaharshit26@gmail.com</span></Link>
             </div>
             <div className="text-white font-normal text-base">
               Full Stack Web App Developer

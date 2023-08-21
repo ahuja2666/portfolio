@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Main() {
   return (
-    <main className='text-3xl text-white ml-36 mr-32 py-2  max-sm:ml-5 max-sm:mr-5 max-sm:mt-3 flex flex-col gap-10 justify-between'>
+    <main className='text-3xl text-white ml-36 mr-32 py-2  max-sm:mx-5  max-sm:mt-3 flex flex-col gap-10 justify-between'>
       <Grid container spacing={6} justifyContent="center" alignItems="center">
         <Grid item xs={12} sm={12} md={6} lg={6}>
           <div className='flex flex-col gap-8'>
