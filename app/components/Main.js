@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-// import "./main.css"
 
 export default function Main() {
   return (

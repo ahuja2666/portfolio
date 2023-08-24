@@ -10,6 +10,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import Toolbar from '@mui/material/Toolbar';
 import Link from 'next/link';
 import Image from 'next/image'
+import { usePathname } from 'next/navigation';
+import "./header.css";
 
 const contacts = [{ img: "/Discord.png", alt: "disord icon", href: "https://discordapp.com/users/938844640004673536", text: "!harshit#7305" },
 { img: "/Email.png", alt: "email icon", href: "mailto: ahujaharshit26@gamil.com", text: "ahujaharshit26@gamil.com" },
@@ -21,6 +23,7 @@ const navItems = [{ name: 'home', url: '/' }, { name: 'works', url: '/work' }, {
 
 export default function Header(props) {
   const { window } = props;
+  const path = usePathname()
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -137,7 +140,7 @@ export default function Header(props) {
           <Box sx={{ display: { xs: 'none', md: 'block' } }}>
             {navItems.map((item) => (
               <Link href={item?.url} key={item?.name} className='mr-5' >
-                <span className='text-[#C778DD]'>#</span><span className='hover:text-[#ABB2BF]'>{item?.name}</span>
+                <span className='text-[#C778DD]'>#</span><span className='hover:text-[#ABB2BF] relative' id={(item?.url === path) ? "underline" : ""}>{item?.name}</span>
               </Link>
             ))}
           </Box>
