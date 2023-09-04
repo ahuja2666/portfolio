@@ -8,19 +8,19 @@ export default function ProjectsCards(props) {
   const { data } = props
 
   return (
-    <Grid container spacing={2} justifyContent="space-between">
+    <Grid container spacing={2} justifyContent="space-between" alignItems="stretch" >
 
       {
         data?.map((item, idx) => {
           return (
-            <Grid key={idx + "gg"} item xs={12} md={6} lg={4}>
-              <Card sx={{ border: borderGray, borderRadius: 0 }}>
+            <Grid key={idx + "gg"} item xs={12} md={6} lg={4} >
+              <Card sx={{ border: borderGray, borderRadius: 0, height: "100%", backgroundColor: "#282c33" }}>
                 {(item?.thumbnail) && <CardMedia
                   sx={{ height: 160 }}
                   image={item?.thumbnail}
                   title={item?.name}
                 />}
-                <CardContent sx={{ backgroundColor: "#282c33", border: borderGray, padding: 0, margin: 0 }}>
+                <CardContent sx={{ border: borderGray, padding: 0, margin: 0, height: "100%" }}>
                   <div className="border-t border-b border-[#ABB2BF] text-[#ABB2BF] text-base p-1" >
                     {item?.techStack}
                   </div>
