@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import IntroText from './IntroText'
 
 export default function Main() {
   return (
@@ -18,7 +19,14 @@ export default function Main() {
                 From Frontend Flourishes to Backend Brilliance: Powering Digital Dreams with Full Stack Wizardry</p>
             </div>
             <div>
-              <Link href={"/contact"}><button className='border-[#C778DD] border font-medium text-base py-2 px-4 hover:text-[#ABB2BF]'>Contact Me!!</button></Link>
+              <Link href={"/contact"}>
+                <button className="relative inline-flex h-12 overflow-hidden  p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                  <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                  <span className="inline-flex h-full w-full cursor-pointer items-center justify-center  bg-[#282c33]  py-2 px-4 text-base font-medium  backdrop-blur-3xl hover:text-[#ABB2BF]">
+                    Contact Me!!
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </Grid>
@@ -49,7 +57,9 @@ export default function Main() {
       </Grid>
       <div className="p-0 m-0 box-border w-[85%] mx-auto max-md:hidden">
         <fieldset className="border border-[#ABB2BF] pl-[2%] border-b-0">
-          <p className=" text-2xl text-center p-3 pt-1 font-normal">Turning coffee into code, one cup at a time!</p>
+          <div className=" text-2xl text-center p-3 pt-1 font-normal">
+            <IntroText words={'Turning coffee into code, one cup at a time!'} />
+          </div>
           <legend>
             <Image
               height={25}
