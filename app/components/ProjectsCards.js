@@ -1,6 +1,8 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Grid } from "@mui/material";
+import AnimatedButton from "./AnimatedButton";
+import Link from "next/link";
 const borderGray = "1px solid #ABB2BF"
-const borderPurple = "1px solid #C778DD"
+// const borderPurple = "1px solid #C778DD"
 
 
 
@@ -29,8 +31,8 @@ export default function ProjectsCards(props) {
                     <p className="text-[#ABB2BF] text-base font-normal px-2">{item?.title}</p>
                   </div>
                   <div className="flex p-2 gap-4">
-                    {(item?.liveUrl) && <Button target="_blank" href={item.liveUrl} className=" hover:text-[#ABB2BF]" sx={{ border: borderPurple, color: "#fff", paddingX: "16px", paddingY: "8px", borderRadius: 0 }} size="small">Live &nbsp; &lt;~&gt;</Button>}
-                    {(item?.github) && <Button target="_blank" href={item?.github} className=" hover:text-[#ABB2BF]" sx={{ border: borderPurple, color: "#fff", paddingX: "16px", paddingY: "8px", borderRadius: 0 }} size="small">Github &nbsp; &#8804;</Button>}
+                    {(item?.liveUrl) && <Link className="text-white hover:text-[#ABB2BF]" target="_blank" href={item?.liveUrl}><AnimatedButton btnText={`Live <~>`} /></Link>}
+                    {(item?.github) && <Link className="text-white hover:text-[#ABB2BF]" target="_blank" href={item?.github}><AnimatedButton btnText={`Github ≤`} /></Link>}
                   </div>
                 </CardContent>
               </Card>
