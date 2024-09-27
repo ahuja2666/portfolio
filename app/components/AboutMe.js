@@ -51,10 +51,10 @@ export default function AboutMe(props) {
             <Grid item xs={12} md={6} lg={6}>
               <div className="flex items-end justify-end">
                 <Image
-                  src={"/about-me.png"}
+                  src={"/coffee2code.webp"}
+                  alt="coffee to code"
                   height={500}
                   width={343}
-                  alt="about-harshit"
                 />
               </div>
             </Grid>

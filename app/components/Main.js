@@ -44,7 +44,7 @@ export default function Main() {
                 className=" inline mr-2 mb-0.5"
               />
               <span className="text-[#ABB2BF]">Currently working at </span>
-              <span>BluePi Consulting Pvt. Ltd.</span>
+              <span>Solvative Private Limited</span>
             </div>
           </div>
 
