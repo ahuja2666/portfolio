@@ -43,8 +43,6 @@ export default function Main() {
                 alt="box"
                 className=" inline mr-2 mb-0.5"
               />
-              <span className="text-[#ABB2BF]">Currently working at </span>
-              <span>Solvative Private Limited</span>
             </div>
           </div>
 
