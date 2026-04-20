@@ -4,7 +4,7 @@ const data = [
   {
     name: "GEN AI VIDEO INTERVIEW APP",
     techStack: "OPENAI LANGGRAPH LANGCHAIN",
-    liveUrl: "https://ai-interview-india-jobs.vercel.app/",
+    liveUrl: "https://ai.quickscreenhr.com/",
     github: "https://github.com/ahuja2666/ai-interview-india-jobs",
     thumbnail:
       "https://res.cloudinary.com/dfegprdja/image/upload/v1755242793/Screenshot_2025-08-15_at_12.55.40_PM_bmlzvn.png",
